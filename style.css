@@ -1,35 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@700&family=Manrope:wght@400;800&family=Nothing+You+Could+Do&family=Open+Sans:wght@600&display=swap');
+
+:root{
+    background-color: hsl(12, 16%, 31%);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 * {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
     margin: 0;
     padding: 0;
+    text-align: center;
     /*font-family: 'Libre Caslon Text', serif;
 font-family: 'Manrope', sans-serif;
 font-family: 'Nothing You Could Do', cursive;
 font-family: 'Open Sans', sans-serif;
 */}
 
-.starter{
+#dataProtection {
+    margin-top: 8%;
+}
+
+h1{
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Manrope;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 130%; /* 62.4px */
+}
+
+h2{
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Manrope;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 130%; /* 62.4px */
+}
+
+button{
+    display: flex;
+    padding: 15px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    background: hsl(9, 17%, 24%);
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: hsl(9, 17%, 25%)
+}
+
+
+.Welcome {
     min-height: 100vh;
     width: 100%;
     background-image: url(images/cafe_pouring_milk.jpg);
     background-position: center;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
+    text-align: center;
+}
+
+.Welcome h2 {
+    font-family: 'Libre Caslon Text', serif;
+    font-size: 55px;
+    margin-bottom: 50px;
+    margin-top: 150px;
+}
+
+.Welcome h1 {
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: 48px;
+    margin-bottom: 100px;
 }
 
 .header{
-
-}
-
-nav{
-    display: flex;
-    padding: 2% 6%;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
+    height: 10%;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1); /* Hier die Schattenwerte anpassen */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
     background-color: #5B4742;
 }
 
+nav{
+    font-family: 'Manrope', sans-serif;
+    display: flex;
+    padding: 0% 5%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5B4742;
+    padding-top: 0.5%;
+}
+
 nav img{
-    width: 80px;
+    width: 70px;
 }
 
 .nav-links{
@@ -45,10 +122,10 @@ nav img{
 }
 
 .nav-links ul a{
-    color: white;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 20px;
     font-family: 'Manrope', sans-serif;
+    font-weight: 800;
 }
 
 .nav-links ul li::after{
@@ -63,5 +140,196 @@ nav img{
 
 .nav-links ul li:hover::after{
     width: 100%;
+}
+
+@font-face {
+    font-family: 'Material Symbols Outlined';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fonts.gstatic.com/s/materialsymbolsoutlined/v24/rAXkHiKDts8eRF3PZUOEoqptL6hqT2Pt1gO0ETMXfvo.woff2') format('woff2');
+}
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    display: none;
+}
+
+.About {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0%;
+}
+
+.image-container {
+    width: 50%;
+}
+
+.text-container {
+    width: 45%;
+    padding: 5% 15%;
+}
+
+.Menu {
+    display: flex;
+    width: 100%;
+    padding: 5% 35%;
+    align-items: center;
+    gap: 10%;
+}
+
+.menu-list {
+    margin-left: 0; /* Abstand zwischen Titel und Liste anpassen */
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3%;
+}
+
+.menu-item span {
+    margin-left: 150px;
+}
+
+.menu-title {
+    align-items: flex-start;
+}
+
+.Hours{
+    padding: 5%;
+    align-items: center;
+}
+
+.Hours h2{
+    margin-bottom: 30px;
+}
+
+.hours-item {
+    padding: 3px;
+}
+
+.hours-item span {
+    margin-left: 20px;
+}
+
+.Reservation {
+    display: inline-flex;
+    padding: 5% 30%;
+    flex-direction: column;
+    align-items: center;
+    gap: 10%;
+}
+
+.Reservation h2 {
+    margin-bottom: 30px;
+}
+
+.Reservation p {
+    padding: 5%;
+    margin-bottom: 30px;
+}
+
+.Contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0%;
+}
+
+.map-container {
+    width: 50%;
+}
+
+.title-container {
+    width: 45%;
+    padding: 5% 15%;
+}
+
+
+.Form {
+    display: flex;
+    padding: 5% 10%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Form h2{
+    margin-right: 20px;
+}
+
+.FormContainer {
+    flex: 1; /* Abstand zwischen Titel und Liste anpassen */
+}
+
+
+
+
+
+img {
+    max-width: 100%; /* Das Bild wird nicht breiter als sein Container */
+    height: auto;    /* Das Bild behält sein Seitenverhältnis bei */
+    display: block;  /* Entfernt mögliche Lücken unter dem Bild */
+    margin: 0 auto;  /* Zentriert das Bild innerhalb seines Containers */
+}
+
+footer{
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+}
+
+.footer-left img {
+    max-width: 70px;
+}
+
+.footer-right a{
+    text-decoration: none;
+}
+
+@media (max-width: 750px) {
+    .Welcome h1{
+        font-size: 20px;
+    }
+    .Welcome h2{
+        font-size: 20px;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+
+    .nav-links ul li{
+        display: block;
+    }
+
+    .nav-links{
+        position: absolute;
+        background: #bd3615;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: 0;
+        text-align: left;
+        z-index: 2;
+    }
+    .material-symbols-outlined {
+        display: block;
+        color: white;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .material-symbols-outlined.menu,
+    .material-symbols-outlined.close {
+        display: none; /* Texte verstecken */
+    }
+    
 
 }
