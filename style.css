@@ -59,7 +59,8 @@ button:hover{
 
 .breadcrumb-navigation {
     padding: 2%;
-    margin-left: -80%;
+    margin-left: 0%;
+    text-align: left;
 }
 
 .breadcrumb-navigation > li {
@@ -106,7 +107,7 @@ button:hover{
 .header{
     width: 100%;
     height: 10%;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1); /* Hier die Schattenwerte anpassen */
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -199,7 +200,7 @@ nav img{
 }
 
 .menu-list {
-    margin-left: 0; /* Abstand zwischen Titel und Liste anpassen */
+    margin-left: 0;
 }
 
 .menu-item {
@@ -265,7 +266,7 @@ nav img{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10%;
+    padding: 5%;
 }
 
 .Form {
@@ -287,7 +288,7 @@ gap: 77px;
     }
 
 .contactFormTitle {
-    padding: 5% 15%;
+    padding: 5% ;
 }
 
 label {
@@ -358,8 +359,8 @@ input[type="submit"]:hover{
     gap: 10%;
 }
 
-.Reservation h2 {
-    margin-bottom: 30px;
+.ReservationStarter h2 {
+    padding: 2%;
 }
 
 .Reservation p {
@@ -373,21 +374,21 @@ input[type="submit"]:hover{
 
 .reservationTitle {
     text-align: center;
-    padding: 2%;
+    padding: 5%;
 }
 
 .reservationFormContainer {
     width: 330px;
     margin: 0 auto; /* Zentriert das Formular horizontal */
     display: flex;
-    flex-direction: column; /* Ändert die Anordnung auf vertikal */
-    align-items: center; /* Zentriert die Elemente horizontal */
-    text-align: center; /* Zentriert den Button horizontal */
-    position: relative; /* Erforderlich für die absolute Positionierung */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
 }
 
 .reservationFormContainer input[type="submit"] {
-    position: relative; /* Absolut positioniert den Button */
+    position: relative;
     bottom: 0; /* Platziert den Button am unteren Rand */
     left: 50%; /* Platziert den Button horizontal in der Mitte */
     transform: translateX(-50%); /* Korrigiert die Position des Buttons horizontal */
@@ -418,11 +419,11 @@ input[type="submit"]:hover{
     background: #D9D9D9;
     border: none;
     margin-bottom: 15px;
-    display: block; /* Ändert die Felder in Blockelemente */
+    display: block;
 }
 
 img {
-    max-width: 100%; /* Das Bild wird nicht breiter als sein Container */
+    max-width: 100%;
     height: auto;    /* Das Bild behält sein Seitenverhältnis bei */
     display: block;  /* Entfernt mögliche Lücken unter dem Bild */
     margin: 0 auto;  /* Zentriert das Bild innerhalb seines Containers */
@@ -460,7 +461,7 @@ footer{
     padding: 5%;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 770px) {
     .Welcome h1{
         font-size: 20px;
     }
@@ -472,20 +473,7 @@ footer{
         font-size: 20px;
     }
 
-    .nav-links ul li{
-        display: block;
-    }
-
-    .nav-links{
-        position: absolute;
-        background: #bd3615;
-        height: 100vh;
-        width: 200px;
-        top: 0;
-        right: 0;
-        text-align: left;
-        z-index: 2;
-    }
+    
     .material-icons {
         display: block;
         color: white;
@@ -494,60 +482,101 @@ footer{
         cursor: pointer;
     }
 
-    .material-icons.menu,
-    .material-icons.close {
-        display: none; /* Texte verstecken */
+    .About {
+        flex-direction: column;
+    }
+    
+    .text-container {
+        order: 1;
+        width: 80%;
+    }
+    
+    .image-container {
+        order: 2;
+    }
+
+    .Menu{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0
+    }
+
+    .menu-title{
+        order: 1;
+        width: 100%;
+        align-items: center;
+    }
+
+    .menu-list{
+        order: 2;
+    }
+
+    .menu-item span {
+        margin-left: 40px;
+        align-items: center;
     }
 
 
-    @media (max-width: 750px) {
-        .About {
-            flex-direction: column; /* Ändert die Ausrichtung auf vertikal */
-        }
-    
-        .text-container {
-            order: 1; /* Verschiebt den Textcontainer nach oben */
-        }
-    
-        .image-container {
-            order: 2; /* Verschiebt den Bildcontainer nach unten */
-        }
+    .Reservation {
+        flex-direction: column;
+        width: 70%;
+        padding: 0;
+      }
 
-        .Menu{
-            flex-direction: column;
-        }
 
-        .menu-title{
-            order: 1;
-        }
-
-        .menu-list{
-            order: 2;
-        }
-
-        .Contact{
-            flex-direction: column;
-        }
-
-        .title-container{
-            order: 1;
-            width: 100%;
-        }
-        .address-container{
-            order: 2;
-        }
-
-        .Form{
-            flex-direction: column;
-        }
-
-        .contactFormTitle{
-            order: 1;
-        }
-
-        .FormContainer{
-            order: 2;
-        }
+    .Contact{
+        flex-direction: column;
     }
+
+    .title-container{
+        order: 1;
+        width: 100%;
+    }
+    
+    .address-container{
+        order: 2;
+    }
+
+    .map-container{
+        padding: 3%;
+    }
+
+    .Form{
+        flex-direction: column;
+    }
+
+    .contactFormTitle{
+        order: 1;
+        margin-right: 75%;
+        padding: 0%;
+        margin-bottom: -10%;
+    }
+
+    .FormContainer{
+        order: 2;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-middle {
+        order: 1; 
+        text-align: center; 
+    }
+
+    .footer-socials,
+    .footer-right {
+        order: 2; 
+        text-align: center;
+    }
+
+    .footer-socials p,
+    .footer-right p {
+        margin: 5px 0; 
+    }
+
 
 }
