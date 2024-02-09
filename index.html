@@ -9,6 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@700&family=Manrope:wght@400;800&family=Nothing+You+Could+Do&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+crossorigin=""/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
 </head>
 <body>
     <header class="header">
@@ -17,7 +23,7 @@
                 <img src="images/cafelogo.png">
             </a>
             <div class="nav-links">
-                <span class="material-symbols-outlined">menu</span>
+                <span class="material-icons">menu</span>
                 <ul>
                     <li><a href="#welcome">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -26,7 +32,7 @@
                     <li><a href="#reservation">Reservation</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <span class="material-symbols-outlined">close</span>
+                <span class="material-icons">close</span>
             </div>
         </nav>
     </header>
@@ -39,9 +45,9 @@
     </section>
     
     <section id="about" class="About">
-        <div class="image-container">
-            to be added
-        </div>
+           <div class="image-container">
+                  <img src="images/barista_payment_cashier.jpg" alt="" />
+            </div>
         <div class="text-container">
         <h2>About</h2>
         <p>Welcome to Melve Cafe, where modern vibes meet the perfect blend of coffee and creativity. 
@@ -79,8 +85,7 @@
     
 
     <section id="contact" class="Contact">
-        <div class="map-container">
-            to be added
+        <div id="map" class="map-container">
         </div>
         <div class="title-container">
         <h2>Where you can find us</h2>
@@ -88,17 +93,22 @@
         </section>
 
     <section id="contactForm" class="Form">
-        <div class="contactForm">
+
             <div class="contactFormTitle">
                 <h2>Contact Us</h2>
             </div>
             <div class="FormContainer">
-                hier ist das Formular
-                test ets
-                test
-
+                    <form id="messageForm">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" ><br><br>
+                    <label for="email">E-Mail</label>
+                    <input type="text" id="email" name="email" ><br><br>
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" ></textarea><br><br>
+                    <input type="submit" value="Send your message">
+                </form>
             </div>
-        </div>
+
     </section>
 
 
@@ -129,7 +139,9 @@
     </footer>
 
     <!-- Link to JS-->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
     <script src="main.js"></script>
-
 </body>
 </html>
