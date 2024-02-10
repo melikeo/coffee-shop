@@ -75,3 +75,16 @@ var marker = L.marker([49.01096392558526, 8.416113100935961]).addTo(map);
 
 
 //Image Slider
+
+//Mobile Menu
+function toggleMobileMenu(menu) {
+  menu.classList.toggle('open');
+}
+
+//Close Mobile Menu when clicked outside
+document.onclick = function(e){
+  if (!menu_icon.contains(e.target) && !mobile-menu.contains(e.target) ) {
+      menu_icon.classList.remove("active");
+      mobile-menu.classList.remove("active_box");
+  }
+}

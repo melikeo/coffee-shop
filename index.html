@@ -13,7 +13,8 @@
 integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
 crossorigin=""/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+ rel="stylesheet">
+
 
 </head>
 <body>
@@ -21,9 +22,7 @@ crossorigin=""/>
         <nav>
             <a href="index.html">
                 <img src="images/cafelogo.png">
-            </a>
             <div class="nav-links">
-                <span class="material-icons">menu</span>
                 <ul>
                     <li><a href="#welcome">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -32,9 +31,22 @@ crossorigin=""/>
                     <li><a href="#reservation">Reservation</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <span class="material-icons">close</span>
             </div>
-        </nav>
+        
+        <div id="menu-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu">
+                <li><a href="#welcome">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#hours">Hours</a></li>
+                <li><a href="#reservation">Reservation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav> 
     </header>
     <main>
 

@@ -60,6 +60,7 @@ button:hover{
 .breadcrumb-navigation {
     padding: 2%;
     margin-left: 0%;
+    margin-top: 20%;
     text-align: left;
 }
 
@@ -128,11 +129,12 @@ nav img{
     width: 70px;
 }
 
-.nav-links{
+.nav-links, .nav-links-reservation{
     flex: 1;
     text-align: right;
 }
 
+.nav-links-reservation ul li,
 .nav-links ul li{
     list-style: none;
     display: inline-block;
@@ -140,6 +142,7 @@ nav img{
     position: relative;
 }
 
+.nav-links-reservation ul a,
 .nav-links ul a{
     text-decoration: none;
     font-size: 20px;
@@ -147,6 +150,7 @@ nav img{
     font-weight: 800;
 }
 
+.nav-links-reservation ul li::after,
 .nav-links ul li::after{
     content: '';
     width: 0%; 
@@ -157,21 +161,11 @@ nav img{
     transition: 0.5s;
 }
 
+.nav-links-reservation ul li:hover::after,
 .nav-links ul li:hover::after{
     width: 100%;
 }
 
-@font-face {
-    font-family: 'Material Symbols Outlined';
-    font-style: normal;
-    font-weight: 400;
-    src: url('https://fonts.gstatic.com/s/materialsymbolsoutlined/v24/rAXkHiKDts8eRF3PZUOEoqptL6hqT2Pt1gO0ETMXfvo.woff2') format('woff2');
-}
-
-.material-icons {
-    font-family: 'Material Symbols Outlined';
-    display: none !important;
-}
 
 .About {
     display: flex;
@@ -243,6 +237,7 @@ nav img{
 .title-container {
     width: 20%;
     padding: 5% 15%;
+    padding-right: 20%;
 }
 
 .address-container {
@@ -250,7 +245,7 @@ nav img{
     flex-direction: column;
     align-items: center;
     gap: 15px;
-
+    padding: 10%;
 }
 
 #map { height: 300px; 
@@ -449,19 +444,107 @@ footer{
     text-decoration: none;
 }
 
-.firstparagraph {
+.firstparagraph,
+.secondparagraph, 
+.thirdparagraph
+ {
     padding: 5%;
 }
 
-.secondparagraph {
-    padding: 5%;
+.secondparagraph ul li,
+.thirdparagraph ul li {
+    list-style-position: inside;
 }
 
-.thirdparagraph {
-    padding: 5%;
+#menu-icon {
+    margin: auto 0;
+    display: none;
+    cursor: pointer;
 }
 
-@media (max-width: 770px) {
+#menu-icon div{
+    width: 35px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.open .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-45deg) translate( -6px, 6px);
+}
+
+.open .bar2 {
+    opacity: 0;
+}
+
+.open .bar3 {
+    -webkit-transform: rotate(45deg) translate(-6px, -8px);
+    transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.mobile-menu{
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    height: calc(100vh-50px);
+    width: 100%;
+}
+
+
+
+@media (max-width: 600px) {
+
+    .mobile-menu{
+        position: absolute;
+        background: hsl(12, 16%, 31%);
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: 0;
+        left: auto;
+        text-align: left;
+        z-index: 2;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .mobile-menu {
+        list-style: none;
+    }
+
+    .mobile-menu li{
+        padding: 5%;
+    }
+
+    .mobile-menu li a{
+        text-decoration: none;
+    }
+
+    .active_box{
+        opacity: 1;
+        left: 0px;
+        pointer-events: fill;
+    }
+    
+    #menu-icon {
+        display: block;
+        padding-right: 5%;
+        z-index: 3;
+    }
+    
+
     .Welcome h1{
         font-size: 20px;
     }
@@ -471,15 +554,6 @@ footer{
 
     h2{
         font-size: 20px;
-    }
-
-    
-    .material-icons {
-        display: block;
-        color: white;
-        margin: 10px;
-        font-size: 22px;
-        cursor: pointer;
     }
 
     .About {
@@ -593,17 +667,12 @@ footer{
 
     .nav-links {
         margin-left: auto;
+        display: none;
     }
 
-    .nav-links ul {
-        margin-right: 0;
+    .nav-links-reservation ul li a{
+        font-size: 20px;
     }
 
-    .nav-links ul li {
-        padding: 8px 6px;
-    }
 
-    .nav-links ul a {
-        font-size: 16px;
-    }
 }
