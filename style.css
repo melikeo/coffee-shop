@@ -6,6 +6,10 @@
     overflow-x: hidden;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 * {
     font-family: 'Open Sans', sans-serif;
     color: white;
@@ -187,7 +191,6 @@ nav img{
 
 .Menu {
     display: flex;
-    width: 100%;
     padding: 5% 35%;
     align-items: center;
     gap: 10%;
@@ -494,12 +497,10 @@ footer{
 .mobile-menu{
     display: none;
     position: absolute;
-    top: 50px;
     left: 0;
     height: calc(100vh-50px);
     width: 100%;
 }
-
 
 
 @media (max-width: 600px) {
@@ -532,7 +533,7 @@ footer{
     #menu-icon {
         display: block;
         position: fixed; /* Stellen Sie sicher, dass das Menu-Icon beim Scrollen sichtbar bleibt */
-        right: 25%; /* Passen Sie den Abstand vom rechten Bildschirmrand an */
+        right: 5%; 
     }
 
     .mobile-menu li{
@@ -551,7 +552,6 @@ footer{
     
     #menu-icon {
         display: block;
-        padding-right: 5%;
         z-index: 3;
     }
     
@@ -584,7 +584,6 @@ footer{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 0
     }
 
     .menu-title{
