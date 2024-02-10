@@ -1,3 +1,52 @@
+let currentIndex = 0;
+let slideshowInterval;
+let images = ['images/barista_payment_cashier.jpg', 'images/coffee-machine.jpg'];
+let pause = false;
+
+
+//Automatic Slide Carousel
+
+function showNextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateSlide();
+}
+
+function showPrevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateSlide();
+}
+
+function updateSlide() {
+    const items = document.querySelectorAll('.item');
+    items.forEach((item, index) => {
+        if (index === currentIndex) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+        }
+    });
+}
+
+function startSlideshow() {
+  slideshowInterval = setInterval(showNextImage, 3500); // Change image every 2 seconds
+}
+
+function pauseSlideshow() {
+  let state = document.querySelector(".pause");
+  if (state.innerHTML == "pause") {
+    state.innerHTML = "play_arrow";
+    pause = true;
+  } else {
+    state.innerHTML = "pause";
+    pause = false;
+  }
+}
+
+// Start slideshow automatically when the page loads
+window.addEventListener('load', startSlideshow);
+
+
+//Reservation Button automatic scroll
 document.getElementById("reservationButton").onclick = function () {
         location.href = "reservation.html";
   }
@@ -75,6 +124,31 @@ var marker = L.marker([49.01096392558526, 8.416113100935961]).addTo(map);
 
 
 //Image Slider
+
+
+function showNextImage() {
+    const items = document.querySelectorAll('.item');
+    items[currentIndex].classList.remove('active'); // Vorheriges Bild ausblenden
+    currentIndex = (currentIndex + 1) % items.length; // Aktualisieren des Index für das nächste Bild
+    items[currentIndex].classList.add('active'); // Aktuelles Bild anzeigen
+}
+
+function showPrevImage() {
+    const items = document.querySelectorAll('.item');
+    items[currentIndex].classList.remove('active'); // Aktuelles Bild ausblenden
+    currentIndex = (currentIndex - 1 + items.length) % items.length; // Aktualisieren des Index für das vorherige Bild
+    items[currentIndex].classList.add('active'); // Vorheriges Bild anzeigen
+}
+
+function pauseSlideshow() {
+    // Hier können Sie die Logik zum Anhalten der Diashow implementieren, falls erforderlich
+}
+
+// Eventlistener für die Buttons hinzufügen
+document.querySelector('.navbutton.prev').addEventListener('click', showPrevImage);
+document.querySelector('.navbutton.next').addEventListener('click', showNextImage);
+
+
 
 //Mobile Menu
 function toggleMobileMenu(menu) {

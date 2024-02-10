@@ -170,7 +170,6 @@ nav img{
     width: 100%;
 }
 
-
 .About {
     display: flex;
     justify-content: space-between;
@@ -178,9 +177,68 @@ nav img{
     margin-bottom: 0%;
 }
 
-.image-container {
+.slider-container {
+    position: relative;
     width: 50%;
     padding: 5%;
+    padding-left: 10%;
+}
+
+.image-container {
+    height: 300px;
+    width: 100%;
+    position: relative; /* Position relativ, um die absolut positionierten Buttons darin zu platzieren */
+}
+
+.image-container .item {
+    position: absolute; /* Position absolut, um die Bilder überlappend anzuzeigen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item.active {
+    opacity: 1;
+}
+
+.button-container {
+    position: relative;
+    top: 10px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.button-container .navbutton {
+    border: none;
+    outline: none;
+    background: hsl(9, 17%, 25%);
+    padding: 1em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.button-container .navbutton:hover {
+    opacity: 0.8;
+}
+
+.text-container {
+    width: 45%;
+    padding: 5% 15%;
 }
 
 .text-container {
@@ -528,8 +586,6 @@ footer{
         justify-content: flex-start;
     }
 
-
-
     #menu-icon {
         display: block;
         position: fixed; /* Stellen Sie sicher, dass das Menu-Icon beim Scrollen sichtbar bleibt */
@@ -554,7 +610,7 @@ footer{
         display: block;
         z-index: 3;
     }
-    
+
 
     .Welcome h1{
         font-size: 20px;
@@ -570,16 +626,24 @@ footer{
     .About {
         flex-direction: column;
     }
+
+    .slider-container {
+        width: 80%;
+        padding: 3%;
+    }
+    
+    .image-container {
+        order: 2;
+        height: 300px;
+        width: 100%;
+        position: relative;
+    }
     
     .text-container {
         order: 1;
         width: 80%;
     }
     
-    .image-container {
-        order: 2;
-    }
-
     .Menu{
         flex-direction: column;
         justify-content: center;

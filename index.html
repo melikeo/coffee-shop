@@ -57,9 +57,21 @@ crossorigin=""/>
     </section>
     
     <section id="about" class="About">
+        <div class="slider-container">
            <div class="image-container">
+            <div class="item active">
                   <img src="images/barista_payment_cashier.jpg" alt="" />
+                </div>
+            	<div class=" item next">
+                    <img src="images/coffee-machine.jpg">
+                </div>
             </div>
+            <div class="button-container">
+                <button class="navbutton prev" onclick="showPrevImage()"><span class="material-icons">arrow_back</span></button>
+                <button class="navbutton pause" onclick="pauseSlideshow()"><span class="material-icons">pause</span></button>
+                <button class="navbutton next" onclick="showNextImage()"><span class="material-icons">arrow_forward</span></button>
+            </div>
+        </div>
         <div class="text-container">
         <h2>About</h2>
         <p>Welcome to Melve Cafe, where modern vibes meet the perfect blend of coffee and creativity. 
