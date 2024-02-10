@@ -504,24 +504,35 @@ footer{
 
 @media (max-width: 600px) {
 
+    
+    
     .mobile-menu{
+        display: none;
         position: absolute;
         background: hsl(12, 16%, 31%);
-        height: 100vh;
+        height: 150vh;
         width: 200px;
-        top: 0;
+        top: 50px;
         right: 0;
         left: auto;
         text-align: left;
         z-index: 2;
+        list-style: none;
     }
+
+    .open .mobile-menu {
+        display: flex; /* Zeige das mobile Menü an, wenn das Menü-Icon angeklickt wird */
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+
 
     #menu-icon {
         display: block;
-    }
-
-    .mobile-menu {
-        list-style: none;
+        position: fixed; /* Stellen Sie sicher, dass das Menu-Icon beim Scrollen sichtbar bleibt */
+        right: 25%; /* Passen Sie den Abstand vom rechten Bildschirmrand an */
     }
 
     .mobile-menu li{
@@ -549,7 +560,7 @@ footer{
         font-size: 20px;
     }
     .Welcome h2{
-        font-size: 20px;
+        font-size: 25px;
     }
 
     h2{
@@ -657,8 +668,7 @@ footer{
     }
 
     nav {
-        padding: 0;
-        width: 100%;
+        padding: 5%;
     }
 
     nav img {
@@ -666,7 +676,6 @@ footer{
     }
 
     .nav-links {
-        margin-left: auto;
         display: none;
     }
 
